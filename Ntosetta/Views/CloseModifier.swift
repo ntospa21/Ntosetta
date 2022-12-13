@@ -1,20 +1,31 @@
 //
 //  CloseModifier.swift
-//  Ntosetta
+//  Ptuxiaki
 //
-//  Created by Pantos, Thomas on 13/12/22.
+//  Created by Pantos, Thomas on 27/11/22.
 //
 
 import SwiftUI
 
-struct CloseModifier: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct CloseModifier: ViewModifier {
+    
+       @Environment(\.presentationMode) var presentationMode
+       
+       func body(content: Content) -> some View {
+           content
+               .toolbar {
+                   Button(action: {
+                       presentationMode.wrappedValue.dismiss()
+                   }, label: {
+                       Image(systemName: "xmark")
+                   })
+               }
+       }
+    
 }
 
-struct CloseModifier_Previews: PreviewProvider {
-    static var previews: some View {
-        CloseModifier()
+extension View {
+    func applyClose() -> some View {
+        self.modifier(CloseModifier())
     }
 }

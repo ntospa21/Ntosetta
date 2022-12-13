@@ -1,20 +1,75 @@
 //
-//  SplashView.swift
-//  Ntosetta
+//  LoadingScreen.swift
+//  Ptuxiaki
 //
-//  Created by Pantos, Thomas on 13/12/22.
+//  Created by Pantos, Thomas on 5/10/22.
 //
 
 import SwiftUI
+import CachedAsyncImage
 
-struct SplashView: View {
+struct SplashScreenView: View {
+    @State var isActive : Bool = false
+    @State private var size = 0.3
+    @State private var opacity = 0.5
+    @EnvironmentObject var sessionService: SessionServiceImpl
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if isActive {
+            MyTabView()
+            
+        } else {
+            ZStack{
+                
+                
+                Color.customRed
+                    .ignoresSafeArea()
+                Circle()
+                    .scale(1.7)
+                    .foregroundColor(.customDarkGreen)
+                Circle()
+                    .scale(1.35)
+                    .foregroundColor(.customGreen)
+                
+                
+                VStack {
+                    
+                    VStack {
+                        Text("Welcome to Ntosseta")
+                            .font(Font.custom("Raleway-Think", size: 30))
+                        Spacer()
+                            .frame(height: 250)
+                        Image( "news")
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.red)
+                        
+                        
+                    }
+                    
+                    .scaleEffect(size)
+                    .opacity(opacity)
+                    .onAppear {
+                        withAnimation(.easeIn(duration: 1.2)) {
+                            self.size = 0.6
+                            self.opacity = 1.00
+                        }
+                    }
+                }
+                
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        withAnimation {
+                            self.isActive = true
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
-struct SplashView_Previews: PreviewProvider {
+struct SplashScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashView()
+        SplashScreenView().environmentObject(SessionServiceImpl())
     }
 }
