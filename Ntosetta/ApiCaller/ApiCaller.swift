@@ -9,9 +9,7 @@ import Foundation
 //import FirebaseFirestore
 import Firebase
 
-class LeftBar: ObservableObject {
-    @Published var isLeftMenuVisible:Bool = false
-}
+
 
  class MyArticlesViewModel:  ObservableObject {
     @Published var myarticles : [MyArticles] = []
@@ -38,6 +36,12 @@ class LeftBar: ObservableObject {
             }
         }
     }
+     
+//     func getProfilePhoto(){
+//         db.collection("images").whereField(<#T##field: String##String#>, in: <#T##[Any]#>)
+//     }
+     
+    
     
     func getSportsCat(){
         db.collection("art").whereField("category", isEqualTo: "sports").addSnapshotListener{(querySnapshot, error ) in

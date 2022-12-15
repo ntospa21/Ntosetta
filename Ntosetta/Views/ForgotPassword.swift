@@ -27,6 +27,12 @@ struct ForgotPassword: View {
                 
                 VStack(spacing: 15){
                     TextField("Email", text: $vm.email)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.black)
+                        .border(.red, width: CGFloat(0))
+                        .textInputAutocapitalization(.never)
+                        .cornerRadius(15)
                     Button("Send passwordReset"){
                         vm.sendPasswordReset()
                         presentationMode.wrappedValue.dismiss()

@@ -17,7 +17,7 @@ struct MyTabView: View {
                     
                 
                     .tabItem{
-                        Image(systemName: "house")
+                        Image(systemName: "house").tint(Color.customGreen)
                         Text("Home")
                     }
                 
@@ -32,7 +32,7 @@ struct MyTabView: View {
                     }
               
                 
-            }
+            }.tint(.customRed)
         } else {
             TabView {
                 
