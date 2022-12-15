@@ -20,7 +20,6 @@ struct ProfileView: View {
     @State var StatusMessage = ""
     @State var retrievedImages = UIImage()
     @State var retrieveUID = [String]()
-//    @ObservedObject var vm = profileViewModel()
     
     var body: some View {
         
@@ -61,16 +60,13 @@ struct ProfileView: View {
                     }
                     Divider()
                     HStack{
-//                        ForEach(retrievedImages, id: \.self ){
-//                            image in
-                            
+
                             Image(uiImage: retrievedImages)
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 128, height: 128)
                                 .cornerRadius(64)
                             
-//                        }
                     }
                     HStack{
                         Image(systemName: "envelope")
@@ -78,28 +74,7 @@ struct ProfileView: View {
                     }
                     Spacer().frame(height: 30)
                     
-                    
-                    //
-                    //                        if image == nil{
-                    //                            Image(systemName: "person.fill")
-                    //                                .resizable()
-                    //                                .scaledToFill()
-                    //                                .frame(width: 128, height: 128)
-                    //                                .cornerRadius(64)
-                    //
-                    //                        } else {
-                    
-                    
-//                    List(vm.profileData){
-//                        pro in
-//                        let uid = Auth.auth().currentUser?.uid
-//                        if uid == pro.id{
-//                            Text(pro.image)
-//
-//                        } else {
-//                            Text("got you ")
-//                        }
-//                    }
+
                     
                    
                     
@@ -199,61 +174,3 @@ struct ProfileView: View {
         }
     
 
-//HStack{
-//    Text("\(sessionService.userDetails?.firstName ?? "N/A" )").foregroundColor(.red)
-//        .font(.title)
-//        .bold()
-//    Text("\(sessionService.userDetails?.lastName ?? "N/A" )").foregroundColor(.red)
-//        .font(.title)
-//        .bold()
-//}
-//HStack{
-//    Image(systemName: "envelope")
-//    Text("\(sessionService.userDetails?.email ?? "N/A")").foregroundColor(.red)
-//}
-//Spacer().frame(height: 30)
-
-//
-//                        Text("Change photo")
-//                                .font(.headline)
-//                                .frame(width: 250)
-//                                .frame(height: 60)
-//                                .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.262745098, green: 0.0862745098, blue: 0.8588235294, alpha: 1)), Color(#colorLiteral(red: 0.5647058824, green: 0.462745098, blue: 0.9058823529, alpha: 1))]), startPoint: .top, endPoint: .bottom))
-//                                .cornerRadius(16)
-//                                .foregroundColor(.white)
-//                                .onTapGesture {
-//                                    showSheet = true
-//                                }
-//                                .sheet(isPresented: $showSheet) {
-//                                        ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
-//
-//                                }
-//
-//                        Button("UploadPhoto"){
-//                            persistImageToStorage()
-//                        }
-                        
-//    private func persistImageToStorage() {
-//        guard let uid = Auth.auth().currentUser?.uid else { return }
-//        let ref = Storage.storage().reference(withPath: uid)
-//        guard let imageData = self.image.jpegData(compressionQuality: 0.5) else { return }
-//        ref.putData(imageData, metadata: nil) { metadata, err in
-//            if let err = err {
-//                self.StatusMessage = "Failed to push image to Storage: \(err)"
-//                return
-//            }
-//
-//            ref.downloadURL { url, err in
-//                if let err = err {
-//                    self.StatusMessage = "Failed to retrieve downloadURL: \(err)"
-//                    print("nope")
-//                    return
-//                }
-//
-//                self.StatusMessage = "Successfully stored image with url: \(url?.absoluteString ?? "")"
-//                print("succesful")
-//                print(url?.absoluteString as Any)
-//
-//            }
-//        }
-//    }

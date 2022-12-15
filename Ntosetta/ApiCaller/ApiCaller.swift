@@ -37,10 +37,7 @@ import Firebase
         }
     }
      
-//     func getProfilePhoto(){
-//         db.collection("images").whereField(<#T##field: String##String#>, in: <#T##[Any]#>)
-//     }
-     
+
     
     
     func getSportsCat(){
