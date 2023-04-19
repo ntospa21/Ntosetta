@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD16F602294BA81E00202476 /* VoiceOverArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16F601294BA81E00202476 /* VoiceOverArticles.swift */; };
+		DD3D4CFE29EB342300F78443 /* UserCred.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD3D4CFC29EB342300F78443 /* UserCred.xcdatamodeld */; };
 		DD8F59FD2947F29D0093DBAE /* NtosettaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F59FC2947F29D0093DBAE /* NtosettaApp.swift */; };
 		DD8F59FF2947F29D0093DBAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F59FE2947F29D0093DBAE /* ContentView.swift */; };
 		DD8F5A012947F29E0093DBAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD8F5A002947F29E0093DBAE /* Assets.xcassets */; };
@@ -48,9 +50,27 @@
 		DD8F5A572947F74A0093DBAE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F5A562947F74A0093DBAE /* LoginView.swift */; };
 		DD8F5A592947F7530093DBAE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F5A582947F7530093DBAE /* RegisterView.swift */; };
 		DD8F5A5B2947F7BC0093DBAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD8F5A5A2947F7BC0093DBAE /* GoogleService-Info.plist */; };
+		DDE913FE298BD67E00940EA5 /* VoiceOverAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE913FD298BD67E00940EA5 /* VoiceOverAll.swift */; };
+		DDE91400298BD81F00940EA5 /* VoiceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE913FF298BD81F00940EA5 /* VoiceContent.swift */; };
+		DDF08F1A2956620D001A67C7 /* ButtonLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08F192956620D001A67C7 /* ButtonLike.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DDFF70F929520748002A9978 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		DD16F601294BA81E00202476 /* VoiceOverArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverArticles.swift; sourceTree = "<group>"; };
+		DD3D4CFD29EB342300F78443 /* UserCred.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserCred.xcdatamodel; sourceTree = "<group>"; };
 		DD8F59F92947F29D0093DBAE /* Ntosetta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ntosetta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD8F59FC2947F29D0093DBAE /* NtosettaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NtosettaApp.swift; sourceTree = "<group>"; };
 		DD8F59FE2947F29D0093DBAE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +104,15 @@
 		DD8F5A562947F74A0093DBAE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DD8F5A582947F7530093DBAE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		DD8F5A5A2947F7BC0093DBAE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DDE913FD298BD67E00940EA5 /* VoiceOverAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverAll.swift; sourceTree = "<group>"; };
+		DDE913FF298BD81F00940EA5 /* VoiceContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceContent.swift; sourceTree = "<group>"; };
+		DDF08F192956620D001A67C7 /* ButtonLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLike.swift; sourceTree = "<group>"; };
+		DDFF70E129520461002A9978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DDFF70E829520748002A9978 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		DDFF70EA29520748002A9978 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		DDFF70ED29520748002A9978 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		DDFF70F029520748002A9978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		DDFF70F229520748002A9978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				DD8F59FB2947F29D0093DBAE /* Ntosetta */,
+				DDFF70EC29520748002A9978 /* ntosseta */,
+				DDFF70E729520748002A9978 /* Frameworks */,
 				DD8F59FA2947F29D0093DBAE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +156,7 @@
 		DD8F59FB2947F29D0093DBAE /* Ntosetta */ = {
 			isa = PBXGroup;
 			children = (
+				DDFF70E129520461002A9978 /* Info.plist */,
 				DD8F5A5A2947F7BC0093DBAE /* GoogleService-Info.plist */,
 				DD8F5A3B2947F5E80093DBAE /* Services */,
 				DD8F5A302947F51C0093DBAE /* Views */,
@@ -135,6 +167,7 @@
 				DD8F59FE2947F29D0093DBAE /* ContentView.swift */,
 				DD8F5A002947F29E0093DBAE /* Assets.xcassets */,
 				DD8F5A022947F29E0093DBAE /* Preview Content */,
+				DD3D4CFC29EB342300F78443 /* UserCred.xcdatamodeld */,
 			);
 			path = Ntosetta;
 			sourceTree = "<group>";
@@ -152,6 +185,8 @@
 			children = (
 				DD8F5A0B2947F2F10093DBAE /* ApiCaller.swift */,
 				DD8F5A1E2947F3850093DBAE /* MyArticles.swift */,
+				DDE913FD298BD67E00940EA5 /* VoiceOverAll.swift */,
+				DDE913FF298BD81F00940EA5 /* VoiceContent.swift */,
 			);
 			path = ApiCaller;
 			sourceTree = "<group>";
@@ -196,6 +231,8 @@
 				DD8F5A542947F7110093DBAE /* SplashView.swift */,
 				DD8F5A562947F74A0093DBAE /* LoginView.swift */,
 				DD8F5A582947F7530093DBAE /* RegisterView.swift */,
+				DD16F601294BA81E00202476 /* VoiceOverArticles.swift */,
+				DDF08F192956620D001A67C7 /* ButtonLike.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +254,25 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		DDFF70E729520748002A9978 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF70E829520748002A9978 /* UserNotifications.framework */,
+				DDFF70EA29520748002A9978 /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDFF70EC29520748002A9978 /* ntosseta */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF70ED29520748002A9978 /* NotificationViewController.swift */,
+				DDFF70EF29520748002A9978 /* MainInterface.storyboard */,
+				DDFF70F229520748002A9978 /* Info.plist */,
+			);
+			path = ntosseta;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,6 +283,7 @@
 				DD8F59F52947F29D0093DBAE /* Sources */,
 				DD8F59F62947F29D0093DBAE /* Frameworks */,
 				DD8F59F72947F29D0093DBAE /* Resources */,
+				DDFF70F929520748002A9978 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -255,7 +312,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					DD8F59F82947F29D0093DBAE = {
@@ -318,6 +375,7 @@
 				DD8F5A262947F41E0093DBAE /* GossipView.swift in Sources */,
 				DD8F59FF2947F29D0093DBAE /* ContentView.swift in Sources */,
 				DD8F5A3F2947F60C0093DBAE /* ForgotPasswordViewModel.swift in Sources */,
+				DDF08F1A2956620D001A67C7 /* ButtonLike.swift in Sources */,
 				DD8F5A362947F58C0093DBAE /* MyNewsArticle.swift in Sources */,
 				DD8F5A342947F5500093DBAE /* HomeView.swift in Sources */,
 				DD8F5A492947F6690093DBAE /* RegistrationService.swift in Sources */,
@@ -326,8 +384,12 @@
 				DD8F5A0C2947F2F10093DBAE /* ApiCaller.swift in Sources */,
 				DD8F59FD2947F29D0093DBAE /* NtosettaApp.swift in Sources */,
 				DD8F5A512947F6EC0093DBAE /* CloseModifier.swift in Sources */,
+				DDE913FE298BD67E00940EA5 /* VoiceOverAll.swift in Sources */,
 				DD8F5A572947F74A0093DBAE /* LoginView.swift in Sources */,
+				DD3D4CFE29EB342300F78443 /* UserCred.xcdatamodeld in Sources */,
 				DD8F5A4F2947F6B20093DBAE /* SessionUserDetails.swift in Sources */,
+				DD16F602294BA81E00202476 /* VoiceOverArticles.swift in Sources */,
+				DDE91400298BD81F00940EA5 /* VoiceContent.swift in Sources */,
 				DD8F5A2A2947F4580093DBAE /* TechnologyView.swift in Sources */,
 				DD8F5A532947F6F90093DBAE /* ForgotPassword.swift in Sources */,
 				DD8F5A452947F6450093DBAE /* LoginViewModel.swift in Sources */,
@@ -336,6 +398,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DDFF70EF29520748002A9978 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDFF70F029520748002A9978 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DD8F5A052947F29E0093DBAE /* Debug */ = {
@@ -455,6 +528,7 @@
 		DD8F5A082947F29E0093DBAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -463,6 +537,8 @@
 				DEVELOPMENT_TEAM = P877L6KY5H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Ntosetta/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -487,6 +563,7 @@
 		DD8F5A092947F29E0093DBAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -495,6 +572,8 @@
 				DEVELOPMENT_TEAM = P877L6KY5H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Ntosetta/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -605,6 +684,19 @@
 			productName = CachedAsyncImage;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		DD3D4CFC29EB342300F78443 /* UserCred.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DD3D4CFD29EB342300F78443 /* UserCred.xcdatamodel */,
+			);
+			currentVersion = DD3D4CFD29EB342300F78443 /* UserCred.xcdatamodel */;
+			path = UserCred.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DD8F59F12947F29D0093DBAE /* Project object */;
 }

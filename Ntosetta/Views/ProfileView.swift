@@ -25,66 +25,74 @@ struct ProfileView: View {
         
         if #available(iOS 16.0, *) {
             NavigationStack{
-                VStack(alignment: .leading, spacing: 15){
-                    HStack{
-                        Text("\(sessionService.userDetails?.firstName ?? "N/A" )").foregroundColor(.red)
-                            .font(.title)
-                            .bold()
-                        Text("\(sessionService.userDetails?.lastName ?? "N/A" )").foregroundColor(.red)
-                            .font(.title)
-                            .bold()
-                    }
-                    
-                    if image != nil {
-                        Image(uiImage: image!)
-                            .resizable()
-                            .frame(width: 200, height: 200)
-                    }
-                    Button{
-                        showSheet = true
-                        
-                    } label: {
-                        Text("select a Photo")
-                    }
-                    
-                    
-                    
-                    
-                    
-                    if image != nil {
-                        Button{
-                            uploadPhoto()
-                        } label: {
-                            Text("Upload Photo")
+                ScrollView{
+                    Spacer()
+                    VStack(alignment: .center, spacing: 15){
+                        HStack{
+                            Text("\(sessionService.userDetails?.firstName ?? "N/A" )").foregroundColor(.red)
+                                .font(.title)
+                                .bold()
+                            Text("\(sessionService.userDetails?.lastName ?? "N/A" )").foregroundColor(.red)
+                                .font(.title)
+                                .bold()
                         }
-                    }
-                    Divider()
-                    HStack{
-
+                        
+                        if image != nil {
+                            Image(uiImage: image!)
+                                .resizable()
+                                .frame(width: 200, height: 200)
+                        }
+                        Button{
+                            showSheet = true
+                            
+                        } label: {
+                            Text("select a Photo")
+                        }
+                        
+                        
+                        
+                        
+                        
+                        if image != nil {
+                            Button{
+                                uploadPhoto()
+                            } label: {
+                                Text("Upload Photo")
+                            }
+                        }
+                        Divider()
+                        HStack{
+                            
                             Image(uiImage: retrievedImages)
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 128, height: 128)
                                 .cornerRadius(64)
                             
-                    }
-                    HStack{
-                        Image(systemName: "envelope")
-                        Text("\(sessionService.userDetails?.email ?? "N/A")").foregroundColor(.red)
-                    }
-                    Spacer().frame(height: 30)
-                    
-
-                    
-                   
-                    
-                    
-                }.navigationTitle("Profile")
-                    .sheet(isPresented: $showSheet, onDismiss: nil){
-                        ImagePicker(sourceType: .photoLibrary, selectedImage: $image)
-                    }
-            }.onAppear{
-                retrievePhoto()
+                        }
+                        HStack{
+                            Image(systemName: "envelope")
+                            Text("\(sessionService.userDetails?.email ?? "N/A")").foregroundColor(.red)
+                        }
+                        Spacer().frame(height: 30)
+                        
+                        
+                        
+                        
+                        
+                        
+                    }.navigationTitle("Profile")
+                        .sheet(isPresented: $showSheet, onDismiss: nil){
+                            ImagePicker(sourceType: .photoLibrary, selectedImage: $image)
+                        }
+                }
+                .onAppear{
+                    retrievePhoto()
+                }
+                .onChange(of: image) { (retrievedImages) in
+                    self.image = retrievedImages
+                }
+                
             }
         } else {
             // Fallback on earlier versions
@@ -117,8 +125,7 @@ struct ProfileView: View {
             if error == nil && metadata != nil {
                 //save reference
                 let db = Firestore.firestore()
-                db.collection("images").document().setData(["url": path, "uid": uid])
-//                x§
+                db.collection("images").document().setData(["url": path, "uid": uid!])
             }
         }
     }
@@ -127,8 +134,9 @@ struct ProfileView: View {
     func retrievePhoto(){
         let db = Firestore.firestore()
         let uid = Auth.auth().currentUser?.uid
+    
         
-        db.collection("images").whereField("uid", isEqualTo: uid).limit(to: 1).getDocuments{ snapshot, error in
+        db.collection("images").whereField("uid", isEqualTo: uid!).limit(to: 1).getDocuments{ snapshot, error in
             if error == nil && snapshot != nil {
                 
                 var paths = [String]()

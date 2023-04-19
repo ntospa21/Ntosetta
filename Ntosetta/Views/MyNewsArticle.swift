@@ -24,70 +24,65 @@ struct MyNewsArticle: View {
     
     var body: some View {
         let synthesizer = AVSpeechSynthesizer()
-        VStack(alignment: .leading){
+        ScrollView(.vertical){
+            VStack(alignment: .leading){
+                
+                Text(title)
+                    .foregroundColor(.blue)
+                    .font(.system(size: 30))
+                    .bold()
+            }
             
-            Text(title)
-                .foregroundColor(.blue)
-                .font(.system(size: 30))
-                .bold()
-        }
-        
-        
-        
-        HStack(alignment: .center) {
-            CachedAsyncImage(url: URL(string: image), transaction: Transaction(animation: .easeInOut)) { phase in
-                if let image = phase.image {
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(RoundedRectangle(cornerRadius: 25))
-                        .transition(.opacity)
-                } else {
-                    HStack {
-                        // Insert your placeholder here
-                        Text("No Image Available")
+            
+            
+            HStack(alignment: .center) {
+                CachedAsyncImage(url: URL(string: image), transaction: Transaction(animation: .easeInOut)) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(RoundedRectangle(cornerRadius: 25))
+                            .transition(.opacity)
+                    } else {
+                        HStack {
+                            // Insert your placeholder here
+                            Text("No Image Available")
+                        }
                     }
                 }
             }
-        }
-        
-        
-        
-        Text(content ?? "")
-            .lineLimit(6)
-            .font(.body)
-            .padding(8)
-        
-        Text(category )
-            .font(.subheadline)
-            .padding(8)
-        HStack{
-            Button(action: {self.isLiked.toggle()
-                print("sth")
-                
-                //                self.arthra.append(MyArticles(title: title, content: content ?? "", image: image, category: category))
-                
-            }, label: {
-                Image(systemName: self.isLiked == true ? "suit.heart.fill" : "suit.heart")
-            })
             
-            Button(action: {
-                let utterance = AVSpeechUtterance(string: content ??  "no content available" )
-                utterance.voice = AVSpeechSynthesisVoice(language: "el-GR")
-                utterance.rate = 0.3
-                synthesizer.speak(utterance)
-            }, label: {
-                Image(systemName: "speaker")
+            
+            
+            Text(content ?? "")
+                .font(.body)
+                .padding(8)
+            
+            Text(category )
+                .font(.subheadline)
+                .padding(8)
+            HStack{
+                Button(action: {self.isLiked.toggle()
+                    
+                    
+                    //                self.arthra.append(MyArticles(title: title, content: content ?? "", image: image, category: category))
+                    
+                }, label: {
+                    Image(systemName: self.isLiked == true ? "suit.heart.fill" : "suit.heart")
+                })
                 
-            })
+                Button(action: {
+                    let utterance = AVSpeechUtterance(string: content ??  "no content available" )
+                    utterance.voice = AVSpeechSynthesisVoice(language: "el-GR")
+                    utterance.rate = 0.45
+                    synthesizer.speak(utterance)
+                }, label: {
+                    Image(systemName: "speaker")
+                    
+                })
+            }
         }
-
     }
 }
 
 
-struct MyNewsArticle_Previews: PreviewProvider {
-    static var previews: some View {
-        MyNewsArticle(title: "code place", image: "...", content: "check it ", category: "sth" )
-    }
-}

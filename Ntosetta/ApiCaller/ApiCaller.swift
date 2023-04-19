@@ -13,6 +13,9 @@ import Firebase
 
  class MyArticlesViewModel:  ObservableObject {
     @Published var myarticles : [MyArticles] = []
+     @Published var myVoiceContent: [String] = []
+     @Published var likedArticles: [MyNewsArticle] = []
+     
     private var db = Firestore.firestore()
 
     init(){
@@ -38,6 +41,20 @@ import Firebase
     }
      
 
+     func getVoices(){
+         db.collection("art").addSnapshotListener{ (querySnapshot, error) in
+             guard let documents = querySnapshot?.documents else {
+                 print("no docs")
+                 return
+             }
+             self.myVoiceContent = documents.map{ (QueryDocumentSnapshot) -> String in
+                 let data = QueryDocumentSnapshot.data()
+                 let title = data["title"] as? String ?? ""
+                 let content = data["content"] as? String ?? ""
+                 return content
+             }
+         }
+     }
     
     
     func getSportsCat(){

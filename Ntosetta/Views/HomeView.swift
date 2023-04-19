@@ -9,13 +9,14 @@ import SwiftUI
 import CachedAsyncImage
 import Firebase
 
-struct NewTry: View {
+struct HomeView: View {
     @ObservedObject private var viewModel = MyArticlesViewModel()
     @State private var searchText = ""
     @State var showMenu = false
     @State private var isSideBarOpened = false
     @EnvironmentObject var sessionService: SessionServiceImpl
     let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
+    @State private var rotationAngle: Double = 0
 
     var body: some View {
 
@@ -45,8 +46,15 @@ struct NewTry: View {
                                             } else {
                                                 HStack {
                                                     
-                                                    Text("got him")
-                                                    // Insert your placeholder here
+                                                    Text("There's a problem right now ")
+                                                    Image(systemName: "gear")
+                                                               .font(.system(size: 100))
+                                                               .foregroundColor(.blue)
+                                                               .rotationEffect(.degrees(rotationAngle))
+                                                               .animation(Animation.linear(duration: 2).repeatForever(autoreverses: false))
+                                                               .onAppear {
+                                                                   rotationAngle = 360
+                                                               }// Insert your placeholder here
                                                 }
                                             }
                                         }
@@ -67,42 +75,15 @@ struct NewTry: View {
                         }
                     } else {
                         NavigationStack{
-                            VStack{
-                                List{
-                                    NavigationLink(destination: SportsView(), label:{
-                                        Label("Sports", systemImage: "sportscourt")
-//                                            .frame(width: 100, height: 50, alignment: .topLeading)
-                                            .foregroundColor(.red)
-                                    })
-                                    NavigationLink(destination: MusicView(), label:{
-                                        Label("Music", systemImage: "music.note")
-                                            .foregroundColor(.yellow)
-//                                            .frame(width: 100, height: 50)
-                                        
-                                    })
-                                    NavigationLink(destination: GossipView(), label:{
-                                        Label("Gossip", systemImage: "person.2.wave.2.fill")
-                                            .foregroundColor(.pink)
-//                                            .frame(width: 100, height: 50, alignment: .leading)
-                                        
-                                    })
-                                    NavigationLink(destination: TechnologyView(), label:{
-                                        Label("Technology", systemImage: "gear")
-//                                            .font(.system(size: 14))
-                                            .foregroundColor(.gray)
-//                                            .frame(width: 100, height: 50, alignment: .leading)
-                                     
-                                    })
-//
-//                                    NavigationLink(destination: ProfileVieww(), label: {
-//                                        Label("Profile", systemImage: "person")
-//                                            .foregroundColor(.blue)
-//                                    })
-//                                    Button(action: logout(), label: {
-//                                        Label("Log out", systemName: "rectangle.portrait.and.arrow.right")
-//                                    })
-                                }
-                                
+                            
+                            VStack {
+                                List(Category.allCases, id: \.self) { category in
+                                           NavigationLink(destination: getView(for: category)) {
+                                               Label(category.rawValue, systemImage: category.icon)
+                                                   .foregroundColor(category.color)
+                                           }
+                                       }
+                                       .navigationTitle("Categories")
                             }
                             
                         }.background(Color.red)
@@ -138,7 +119,6 @@ struct NewTry: View {
             }
             .onAppear(){
                 viewModel.fetchData()
-                print("should be fetched")
 
 
             }
@@ -152,10 +132,55 @@ struct NewTry: View {
     func logout() {
         try? Auth.auth().signOut()
     }
+    func getView(for category: Category) -> some View {
+           switch category {
+           case .sports:
+               return AnyView(SportsView())
+           case .music:
+               return AnyView(MusicView())
+           case .gossip:
+               return AnyView(GossipView())
+           case .technology:
+               return AnyView(TechnologyView())
+           }
+       }
     
-    struct NewTry_Previews: PreviewProvider {
+    enum Category: String, CaseIterable {
+        case sports = "Sports"
+        case music = "Music"
+        case gossip = "Gossip"
+        case technology = "Technology"
+        
+        var icon: String {
+            switch self {
+            case .sports:
+                return "sportscourt"
+            case .music:
+                return "music.note"
+            case .gossip:
+                return "person.2.wave.2.fill"
+            case .technology:
+                return "gear"
+            }
+        }
+        
+        var color: Color {
+            switch self {
+            case .sports:
+                return .red
+            case .music:
+                return .yellow
+            case .gossip:
+                return .pink
+            case .technology:
+                return .gray
+            }
+        }
+    }
+    
+    struct HomeView_Previews: PreviewProvider {
         static var previews: some View {
-            NewTry()
+            HomeView()
                 .environmentObject(SessionServiceImpl())
         }
     }

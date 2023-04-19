@@ -20,6 +20,8 @@ struct UserSessionDetails {
     let firstName: String
     let lastName: String
     let email: String
+    let likedArticles: [String]
+    
 }
 protocol SessionService {
     var state : SessionState { get }
@@ -61,11 +63,12 @@ private extension SessionServiceImpl {
                       let value = snapshot.value as? NSDictionary,
                       let firstName = value[RegistrationKeys.firstName.rawValue] as? String,
                       let email = value[RegistrationKeys.email.rawValue] as? String,
+                      let likedArticles = value[RegistrationKeys.likedArticles.rawValue] as? [String],
                       let lastName = value[RegistrationKeys.lastName.rawValue] as? String else {
                     return
                 }
                 DispatchQueue.main.async {
-                    self.userDetails = UserSessionDetails(firstName: firstName, lastName: lastName, email: email)
+                    self.userDetails = UserSessionDetails(firstName: firstName, lastName: lastName, email: email, likedArticles: likedArticles)
                 }
             }
         

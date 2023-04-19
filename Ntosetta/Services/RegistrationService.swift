@@ -14,7 +14,7 @@ enum RegistrationKeys: String {
     case firstName
     case lastName
     case email
-    
+    case likedArticles
 }
 
 protocol RegistrationService {
@@ -36,7 +36,8 @@ final class RegistrationServiceImpl: RegistrationService {
                             if let uid = res?.user.uid {
                                 let values = [RegistrationKeys.firstName.rawValue: details.firstName,
                                               RegistrationKeys.email.rawValue: details.email,
-                                              RegistrationKeys.lastName.rawValue: details.lastName
+                                              RegistrationKeys.lastName.rawValue: details.lastName,
+                                              RegistrationKeys.likedArticles.rawValue: details.likedArticles
                                               
                                 ] as [String: Any]
                                 

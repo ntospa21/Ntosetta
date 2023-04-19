@@ -9,15 +9,14 @@ import SwiftUI
 
 struct MyTabView: View {
     @StateObject var sessionService = SessionServiceImpl()
-    
     var body: some View {
         if #available(iOS 16.0, *) {
             TabView {
-                NewTry()
+                HomeView()
                     
                 
                     .tabItem{
-                        Image(systemName: "house").tint(Color.customGreen)
+                        Image(systemName: "house")
                         Text("Home")
                     }
                 
@@ -29,6 +28,11 @@ struct MyTabView: View {
                         Text("\(sessionService.userDetails?.firstName ?? "N/A")")
                             .environmentObject(sessionService)
                         
+                    }
+                VoiceOverArticles()
+                    .tabItem{
+                        Image(systemName: "speaker")
+                        Text("VoiceOver")
                     }
               
                 
@@ -46,7 +50,7 @@ struct MyTabView: View {
                             .environmentObject(sessionService)
                         
                     }
-                NewTry()
+                HomeView()
                 
                     .tabItem{
                         Image(systemName: "house")

@@ -12,11 +12,12 @@ struct RegistrationDetails {
     var password: String
     var firstName: String
     var lastName: String
+    var likedArticles: [String]
     
 }
 
 extension RegistrationDetails {
     static var new: RegistrationDetails {
-        RegistrationDetails(email: "", password: "", firstName: "", lastName: "")
+        RegistrationDetails(email: "", password: "", firstName: "", lastName: "", likedArticles: [""])
     }
 }

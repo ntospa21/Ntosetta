@@ -14,9 +14,9 @@ struct SportsView: View {
     var body: some View {
         
         
-        List(viewModel.myarticles){
+        List(viewModel.myarticles , id: \.id){
             article in
-          
+            NavigationLink(destination: MyNewsArticle(title: article.title, image: article.image, content: article.content, category: article.category)){
                 VStack(alignment: .leading){
                     
                     
@@ -32,6 +32,8 @@ struct SportsView: View {
                                 
                             } else {
                                 HStack {
+                                    
+                                    Text("got him")
                                     // Insert your placeholder here
                                 }
                             }
@@ -49,6 +51,8 @@ struct SportsView: View {
                         .font(.subheadline)
                         .padding(8)
                 }
+            }
+        
             
         }.onAppear(){
             viewModel.getSportsCat()        }
