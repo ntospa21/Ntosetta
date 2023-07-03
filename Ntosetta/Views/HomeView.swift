@@ -9,6 +9,10 @@ import SwiftUI
 import CachedAsyncImage
 import Firebase
 
+
+
+
+
 struct HomeView: View {
     @ObservedObject private var viewModel = MyArticlesViewModel()
     @State private var searchText = ""
@@ -17,6 +21,7 @@ struct HomeView: View {
     @EnvironmentObject var sessionService: SessionServiceImpl
     let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
     @State private var rotationAngle: Double = 0
+        
 
     var body: some View {
 
@@ -70,7 +75,9 @@ struct HomeView: View {
                                     Text(article.category)
                                         .font(.subheadline)
                                         .padding(8)
-                                }
+                                    
+                                  
+                                }.accessibility(identifier: "Articles")
                             }
                         }
                     } else {
@@ -92,6 +99,7 @@ struct HomeView: View {
                         // Group
                 }
                 .navigationTitle("Ntosetta")
+                
                 
                 .toolbar {
                     
@@ -123,7 +131,6 @@ struct HomeView: View {
 
             }
         } else {
-            // Fallback on earlier versions
         }
     }
    
@@ -185,3 +192,5 @@ struct HomeView: View {
         }
     }
 }
+
+

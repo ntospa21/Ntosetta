@@ -1,56 +1,47 @@
-//
-//  LoadingScreen.swift
-//  Ptuxiaki
-//
-//  Created by Pantos, Thomas on 5/10/22.
-//
-
 import SwiftUI
 import CachedAsyncImage
 
 struct SplashScreenView: View {
-    @State var isActive : Bool = false
+    @State var isActive: Bool = false
     @State private var size = 0.3
     @State private var opacity = 0.5
     @State var progress: Double = 0
     @State var isProgressBarComplete = false
     
-    
     @EnvironmentObject var sessionService: SessionServiceImpl
+    
+//    init() {
+//            // Check for launch argument and set isActive accordingly
+//            let isBypassingSplashScreen = CommandLine.arguments.contains("-bypassSplashScreen")
+//            self._isActive = State(initialValue: !isBypassingSplashScreen)
+//        }
+
     
     var body: some View {
         if isActive {
-            
             MyTabView()
-            
         } else {
-            if isProgressBarComplete == false{
+            if isProgressBarComplete == false {
                 CircularProgressBar()
-                
-                    .onAppear{
+                    .accessibility(identifier: "CircularProgressBar")
+                    .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                             self.isProgressBarComplete = true
                         }
-                        
                     }
-                
-                
-                
-                
             } else {
                 SplashSplash()
-                    .onAppear{
+                    .accessibility(identifier: "SplashSplash")
+                    .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                             self.isActive = true
                         }
                     }
-                
             }
         }
     }
 }
- 
-    
+
 struct CircularProgressBar: View {
     @State var progress: CGFloat = 0.0
     
@@ -68,6 +59,7 @@ struct CircularProgressBar: View {
                 .rotationEffect(Angle(degrees: -90.0))
                 .animation(.linear(duration: 1.0))
         }
+        .accessibility(identifier: "CircularProgressBarCircle")
         .frame(width: 100.0, height: 100.0)
         .onAppear {
             progress = 100.0
@@ -75,57 +67,54 @@ struct CircularProgressBar: View {
     }
 }
 
-
-    struct SplashSplash: View {
-        @State var isActive : Bool = false
-        @State var isProgressBarComplete = false
-        
-        @State private var size = 0.3
-        @State private var opacity = 0.5
-        var body: some View {
-            ZStack{
-                Color.customRed
-                    .ignoresSafeArea()
-                Circle()
-                    .scale(1.7)
-                    .foregroundColor(.customDarkGreen)
-                Circle()
-                    .scale(1.35)
-                    .foregroundColor(.customGreen)
-                
-                
+struct SplashSplash: View {
+    @State var isActive: Bool = false
+    @State var isProgressBarComplete = false
+    
+    @State private var size = 0.3
+    @State private var opacity = 0.5
+    
+    var body: some View {
+        ZStack {
+            
+            Color.customRed
+                .ignoresSafeArea()
+            
+            Circle()
+                .scale(1.7)
+                .foregroundColor(.customDarkGreen)
+            
+            Circle()
+                .scale(1.35)
+                .foregroundColor(.customGreen)
+            
+            VStack {
                 VStack {
+                    Text("Welcome to Ntosseta")
+                        .font(Font.custom("Raleway-Think", size: 30))
                     
-                    VStack {
-                        Text("Welcome to Ntosseta")
-                            .font(Font.custom("Raleway-Think", size: 30))
-                        Spacer()
-                            .frame(height: 250)
-                        Image( "news")
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(.red)
-                        
-                        
-                    }
+                    Spacer().frame(height: 250)
                     
-                    .scaleEffect(size)
-                    .opacity(opacity)
-                    .onAppear {
-                        withAnimation(.easeIn(duration: 1.2)) {
-                            self.size = 0.6
-                            self.opacity = 1.00
-                        }
+                    Image("news")
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.red)
+                }
+                .scaleEffect(size)
+                .opacity(opacity)
+                .onAppear {
+                    withAnimation(.easeIn(duration: 1.2)) {
+                        self.size = 0.6
+                        self.opacity = 1.00
                     }
                 }
-                
-                
             }
         }
+        .accessibility(identifier: "SplashSplashBackground")
     }
-    struct SplashScreenView_Previews: PreviewProvider {
-        static var previews: some View {
-            SplashScreenView().environmentObject(SessionServiceImpl())
-        }
-    }
-    
+}
 
+struct SplashScreenView_Previews: PreviewProvider {
+    static var previews: some View {
+        SplashScreenView().environmentObject(SessionServiceImpl())
+    }
+}

@@ -27,6 +27,7 @@ struct ForgotPassword: View {
                 
                 VStack(spacing: 15){
                     TextField("Email", text: $vm.email)
+                        .accessibility(identifier: "EmailFgt")
                         .padding()
                         .frame(width: 300, height: 50)
                         .background(Color.black)
@@ -37,6 +38,7 @@ struct ForgotPassword: View {
                         vm.sendPasswordReset()
                         presentationMode.wrappedValue.dismiss()
                     }
+                    .accessibility(identifier: "SendPasswordReset")
                 }
             }
         }.padding(.horizontal, 15)

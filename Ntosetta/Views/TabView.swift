@@ -18,15 +18,18 @@ struct MyTabView: View {
                     .tabItem{
                         Image(systemName: "house")
                         Text("Home")
+                            .accessibilityIdentifier("Home")
                     }
                 
                 
                 ProfileView(sessionService:sessionService )
+                    .accessibility(identifier: "Profile")
                 
                     .tabItem{
                         Image(systemName: "person")
                         Text("\(sessionService.userDetails?.firstName ?? "N/A")")
                             .environmentObject(sessionService)
+                            .accessibilityIdentifier("Profile")
                         
                     }
                 VoiceOverArticles()

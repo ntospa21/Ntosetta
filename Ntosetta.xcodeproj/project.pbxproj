@@ -8,7 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		DD16F602294BA81E00202476 /* VoiceOverArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16F601294BA81E00202476 /* VoiceOverArticles.swift */; };
-		DD3D4CFE29EB342300F78443 /* UserCred.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD3D4CFC29EB342300F78443 /* UserCred.xcdatamodeld */; };
+		DD5DC13E2A3B553400E71696 /* NtosettaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5DC13D2A3B553400E71696 /* NtosettaUITests.swift */; };
+		DD5DC1492A3B613B00E71696 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC1482A3B613B00E71696 /* FirebaseAppCheck */; };
+		DD5DC14B2A3B614600E71696 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC14A2A3B614600E71696 /* CachedAsyncImage */; };
+		DD5DC14D2A3B618F00E71696 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC14C2A3B618F00E71696 /* FirebaseDatabase */; };
+		DD5DC14F2A3B619400E71696 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC14E2A3B619400E71696 /* FirebaseAuthCombine-Community */; };
+		DD5DC1512A3B619800E71696 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC1502A3B619800E71696 /* FirebaseFirestore */; };
+		DD5DC1532A3B619F00E71696 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC1522A3B619F00E71696 /* FirebaseFirestoreSwift */; };
+		DD5DC1552A3B61A800E71696 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC1542A3B61A800E71696 /* FirebaseStorageCombine-Community */; };
+		DD5DC15D2A3B61EF00E71696 /* NtosettaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5DC15C2A3B61EF00E71696 /* NtosettaTests.swift */; };
+		DD5DC1642A3B622D00E71696 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC1632A3B622D00E71696 /* FirebaseAuth */; };
+		DD5DC1662A3B623200E71696 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC1652A3B623200E71696 /* FirebaseDatabase */; };
+		DD5DC1682A3B623500E71696 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC1672A3B623500E71696 /* FirebaseDatabaseSwift */; };
+		DD5DC16A2A3B623900E71696 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC1692A3B623900E71696 /* FirebaseFirestoreSwift */; };
+		DD5DC16C2A3B624000E71696 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC16B2A3B624000E71696 /* FirebaseStorageCombine-Community */; };
+		DD5DC16E2A3B624500E71696 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC16D2A3B624500E71696 /* CachedAsyncImage */; };
+		DD5DC1722A3C763400E71696 /* ForgotPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F5A3C2947F5FE0093DBAE /* ForgotPasswordService.swift */; };
+		DD5DC1732A3C763400E71696 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F5A3E2947F60C0093DBAE /* ForgotPasswordViewModel.swift */; };
+		DD5DC1742A3C763400E71696 /* LoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F5A402947F61D0093DBAE /* LoginCredentials.swift */; };
+		DD5DC1752A3C763400E71696 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F5A422947F62D0093DBAE /* LoginService.swift */; };
+		DD5DC17D2A3CE15D00E71696 /* NtosettaUITests2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5DC17C2A3CE15D00E71696 /* NtosettaUITests2.swift */; };
+		DD5DC17F2A3CE15D00E71696 /* NtosettaUITests2LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5DC17E2A3CE15D00E71696 /* NtosettaUITests2LaunchTests.swift */; };
+		DD5DC1862A3E3BA100E71696 /* MainMenuUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5DC1852A3E3BA100E71696 /* MainMenuUITest.swift */; };
 		DD8F59FD2947F29D0093DBAE /* NtosettaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F59FC2947F29D0093DBAE /* NtosettaApp.swift */; };
 		DD8F59FF2947F29D0093DBAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F59FE2947F29D0093DBAE /* ContentView.swift */; };
 		DD8F5A012947F29E0093DBAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD8F5A002947F29E0093DBAE /* Assets.xcassets */; };
@@ -50,12 +71,47 @@
 		DD8F5A572947F74A0093DBAE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F5A562947F74A0093DBAE /* LoginView.swift */; };
 		DD8F5A592947F7530093DBAE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F5A582947F7530093DBAE /* RegisterView.swift */; };
 		DD8F5A5B2947F7BC0093DBAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD8F5A5A2947F7BC0093DBAE /* GoogleService-Info.plist */; };
+		DDDCB0112A3A12580018A789 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = DDDCB0102A3A12580018A789 /* FirebaseAppCheck */; };
 		DDE913FE298BD67E00940EA5 /* VoiceOverAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE913FD298BD67E00940EA5 /* VoiceOverAll.swift */; };
 		DDE91400298BD81F00940EA5 /* VoiceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE913FF298BD81F00940EA5 /* VoiceContent.swift */; };
 		DDF08F1A2956620D001A67C7 /* ButtonLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08F192956620D001A67C7 /* ButtonLike.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DD5DC1412A3B553400E71696 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD8F59F12947F29D0093DBAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD8F59F82947F29D0093DBAE;
+			remoteInfo = Ntosetta;
+		};
+		DD5DC15E2A3B61EF00E71696 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD8F59F12947F29D0093DBAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD8F59F82947F29D0093DBAE;
+			remoteInfo = Ntosetta;
+		};
+		DD5DC1802A3CE15D00E71696 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD8F59F12947F29D0093DBAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD8F59F82947F29D0093DBAE;
+			remoteInfo = Ntosetta;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		DDB99C202A093BCF00C244CC /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DDFF70F929520748002A9978 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,9 +125,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DD0498212A49CBAD002B5F23 /* NtosettaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NtosettaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD0498222A49CBAD002B5F23 /* NtosettaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NtosettaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD0498232A49CBAD002B5F23 /* NtosettaUITests2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NtosettaUITests2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD16F601294BA81E00202476 /* VoiceOverArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverArticles.swift; sourceTree = "<group>"; };
-		DD3D4CFD29EB342300F78443 /* UserCred.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserCred.xcdatamodel; sourceTree = "<group>"; };
-		DD8F59F92947F29D0093DBAE /* Ntosetta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ntosetta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD5DC13D2A3B553400E71696 /* NtosettaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NtosettaUITests.swift; sourceTree = "<group>"; };
+		DD5DC15C2A3B61EF00E71696 /* NtosettaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NtosettaTests.swift; sourceTree = "<group>"; };
+		DD5DC17C2A3CE15D00E71696 /* NtosettaUITests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NtosettaUITests2.swift; sourceTree = "<group>"; };
+		DD5DC17E2A3CE15D00E71696 /* NtosettaUITests2LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NtosettaUITests2LaunchTests.swift; sourceTree = "<group>"; };
+		DD5DC1852A3E3BA100E71696 /* MainMenuUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuUITest.swift; sourceTree = "<group>"; };
 		DD8F59FC2947F29D0093DBAE /* NtosettaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NtosettaApp.swift; sourceTree = "<group>"; };
 		DD8F59FE2947F29D0093DBAE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DD8F5A002947F29E0093DBAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,18 +166,48 @@
 		DD8F5A562947F74A0093DBAE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DD8F5A582947F7530093DBAE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		DD8F5A5A2947F7BC0093DBAE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DDDCB0202A3B27670018A789 /* Ntosetta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ntosetta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE913FD298BD67E00940EA5 /* VoiceOverAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverAll.swift; sourceTree = "<group>"; };
 		DDE913FF298BD81F00940EA5 /* VoiceContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceContent.swift; sourceTree = "<group>"; };
 		DDF08F192956620D001A67C7 /* ButtonLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLike.swift; sourceTree = "<group>"; };
 		DDFF70E129520461002A9978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		DDFF70E829520748002A9978 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		DDFF70EA29520748002A9978 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
-		DDFF70ED29520748002A9978 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
-		DDFF70F029520748002A9978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		DDFF70F229520748002A9978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DD5DC1382A3B553400E71696 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD5DC14D2A3B618F00E71696 /* FirebaseDatabase in Frameworks */,
+				DD5DC1552A3B61A800E71696 /* FirebaseStorageCombine-Community in Frameworks */,
+				DD5DC1492A3B613B00E71696 /* FirebaseAppCheck in Frameworks */,
+				DD5DC14B2A3B614600E71696 /* CachedAsyncImage in Frameworks */,
+				DD5DC1512A3B619800E71696 /* FirebaseFirestore in Frameworks */,
+				DD5DC14F2A3B619400E71696 /* FirebaseAuthCombine-Community in Frameworks */,
+				DD5DC1532A3B619F00E71696 /* FirebaseFirestoreSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD5DC1572A3B61EF00E71696 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD5DC1682A3B623500E71696 /* FirebaseDatabaseSwift in Frameworks */,
+				DD5DC1662A3B623200E71696 /* FirebaseDatabase in Frameworks */,
+				DD5DC16C2A3B624000E71696 /* FirebaseStorageCombine-Community in Frameworks */,
+				DD5DC16E2A3B624500E71696 /* CachedAsyncImage in Frameworks */,
+				DD5DC1642A3B622D00E71696 /* FirebaseAuth in Frameworks */,
+				DD5DC16A2A3B623900E71696 /* FirebaseFirestoreSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD5DC1772A3CE15D00E71696 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD8F59F62947F29D0093DBAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,6 +220,7 @@
 				DD8F5A172947F34C0093DBAE /* FirebaseFirestoreCombine-Community in Frameworks */,
 				DD8F5A1B2947F34C0093DBAE /* FirebaseStorage in Frameworks */,
 				DD8F5A0F2947F34C0093DBAE /* FirebaseAuth in Frameworks */,
+				DDDCB0112A3A12580018A789 /* FirebaseAppCheck in Frameworks */,
 				DD8F5A192947F34C0093DBAE /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,22 +228,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD5DC13C2A3B553400E71696 /* NtosettaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DD5DC13D2A3B553400E71696 /* NtosettaUITests.swift */,
+			);
+			path = NtosettaUITests;
+			sourceTree = "<group>";
+		};
+		DD5DC1472A3B613B00E71696 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD5DC15B2A3B61EF00E71696 /* NtosettaTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD5DC15C2A3B61EF00E71696 /* NtosettaTests.swift */,
+			);
+			path = NtosettaTests;
+			sourceTree = "<group>";
+		};
+		DD5DC17B2A3CE15D00E71696 /* NtosettaUITests2 */ = {
+			isa = PBXGroup;
+			children = (
+				DD5DC1852A3E3BA100E71696 /* MainMenuUITest.swift */,
+				DD5DC17C2A3CE15D00E71696 /* NtosettaUITests2.swift */,
+				DD5DC17E2A3CE15D00E71696 /* NtosettaUITests2LaunchTests.swift */,
+			);
+			path = NtosettaUITests2;
+			sourceTree = "<group>";
+		};
 		DD8F59F02947F29D0093DBAE = {
 			isa = PBXGroup;
 			children = (
 				DD8F59FB2947F29D0093DBAE /* Ntosetta */,
-				DDFF70EC29520748002A9978 /* ntosseta */,
-				DDFF70E729520748002A9978 /* Frameworks */,
-				DD8F59FA2947F29D0093DBAE /* Products */,
+				DDDCB0202A3B27670018A789 /* Ntosetta.app */,
+				DD5DC13C2A3B553400E71696 /* NtosettaUITests */,
+				DD5DC15B2A3B61EF00E71696 /* NtosettaTests */,
+				DD5DC17B2A3CE15D00E71696 /* NtosettaUITests2 */,
+				DD5DC1472A3B613B00E71696 /* Frameworks */,
+				DD0498212A49CBAD002B5F23 /* NtosettaUITests.xctest */,
+				DD0498222A49CBAD002B5F23 /* NtosettaTests.xctest */,
+				DD0498232A49CBAD002B5F23 /* NtosettaUITests2.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		DD8F59FA2947F29D0093DBAE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DD8F59F92947F29D0093DBAE /* Ntosetta.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		DD8F59FB2947F29D0093DBAE /* Ntosetta */ = {
@@ -167,7 +290,6 @@
 				DD8F59FE2947F29D0093DBAE /* ContentView.swift */,
 				DD8F5A002947F29E0093DBAE /* Assets.xcassets */,
 				DD8F5A022947F29E0093DBAE /* Preview Content */,
-				DD3D4CFC29EB342300F78443 /* UserCred.xcdatamodeld */,
 			);
 			path = Ntosetta;
 			sourceTree = "<group>";
@@ -254,28 +376,80 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		DDFF70E729520748002A9978 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DDFF70E829520748002A9978 /* UserNotifications.framework */,
-				DDFF70EA29520748002A9978 /* UserNotificationsUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DDFF70EC29520748002A9978 /* ntosseta */ = {
-			isa = PBXGroup;
-			children = (
-				DDFF70ED29520748002A9978 /* NotificationViewController.swift */,
-				DDFF70EF29520748002A9978 /* MainInterface.storyboard */,
-				DDFF70F229520748002A9978 /* Info.plist */,
-			);
-			path = ntosseta;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DD5DC13A2A3B553400E71696 /* NtosettaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD5DC1432A3B553400E71696 /* Build configuration list for PBXNativeTarget "NtosettaUITests" */;
+			buildPhases = (
+				DD5DC1372A3B553400E71696 /* Sources */,
+				DD5DC1382A3B553400E71696 /* Frameworks */,
+				DD5DC1392A3B553400E71696 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD5DC1422A3B553400E71696 /* PBXTargetDependency */,
+			);
+			name = NtosettaUITests;
+			packageProductDependencies = (
+				DD5DC1482A3B613B00E71696 /* FirebaseAppCheck */,
+				DD5DC14A2A3B614600E71696 /* CachedAsyncImage */,
+				DD5DC14C2A3B618F00E71696 /* FirebaseDatabase */,
+				DD5DC14E2A3B619400E71696 /* FirebaseAuthCombine-Community */,
+				DD5DC1502A3B619800E71696 /* FirebaseFirestore */,
+				DD5DC1522A3B619F00E71696 /* FirebaseFirestoreSwift */,
+				DD5DC1542A3B61A800E71696 /* FirebaseStorageCombine-Community */,
+			);
+			productName = NtosettaUITests;
+			productReference = DD0498212A49CBAD002B5F23 /* NtosettaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		DD5DC1592A3B61EF00E71696 /* NtosettaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD5DC1602A3B61EF00E71696 /* Build configuration list for PBXNativeTarget "NtosettaTests" */;
+			buildPhases = (
+				DD5DC1562A3B61EF00E71696 /* Sources */,
+				DD5DC1572A3B61EF00E71696 /* Frameworks */,
+				DD5DC1582A3B61EF00E71696 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD5DC15F2A3B61EF00E71696 /* PBXTargetDependency */,
+			);
+			name = NtosettaTests;
+			packageProductDependencies = (
+				DD5DC1632A3B622D00E71696 /* FirebaseAuth */,
+				DD5DC1652A3B623200E71696 /* FirebaseDatabase */,
+				DD5DC1672A3B623500E71696 /* FirebaseDatabaseSwift */,
+				DD5DC1692A3B623900E71696 /* FirebaseFirestoreSwift */,
+				DD5DC16B2A3B624000E71696 /* FirebaseStorageCombine-Community */,
+				DD5DC16D2A3B624500E71696 /* CachedAsyncImage */,
+			);
+			productName = NtosettaTests;
+			productReference = DD0498222A49CBAD002B5F23 /* NtosettaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DD5DC1792A3CE15D00E71696 /* NtosettaUITests2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD5DC1822A3CE15D00E71696 /* Build configuration list for PBXNativeTarget "NtosettaUITests2" */;
+			buildPhases = (
+				DD5DC1762A3CE15D00E71696 /* Sources */,
+				DD5DC1772A3CE15D00E71696 /* Frameworks */,
+				DD5DC1782A3CE15D00E71696 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD5DC1812A3CE15D00E71696 /* PBXTargetDependency */,
+			);
+			name = NtosettaUITests2;
+			productName = NtosettaUITests2;
+			productReference = DD0498232A49CBAD002B5F23 /* NtosettaUITests2.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		DD8F59F82947F29D0093DBAE /* Ntosetta */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD8F5A072947F29E0093DBAE /* Build configuration list for PBXNativeTarget "Ntosetta" */;
@@ -284,6 +458,7 @@
 				DD8F59F62947F29D0093DBAE /* Frameworks */,
 				DD8F59F72947F29D0093DBAE /* Resources */,
 				DDFF70F929520748002A9978 /* Embed Foundation Extensions */,
+				DDB99C202A093BCF00C244CC /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -300,9 +475,10 @@
 				DD8F5A1A2947F34C0093DBAE /* FirebaseStorage */,
 				DD8F5A1C2947F34C0093DBAE /* FirebaseStorageCombine-Community */,
 				DD8F5A2E2947F4A60093DBAE /* CachedAsyncImage */,
+				DDDCB0102A3A12580018A789 /* FirebaseAppCheck */,
 			);
 			productName = Ntosetta;
-			productReference = DD8F59F92947F29D0093DBAE /* Ntosetta.app */;
+			productReference = DDDCB0202A3B27670018A789 /* Ntosetta.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -312,9 +488,21 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					DD5DC13A2A3B553400E71696 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = DD8F59F82947F29D0093DBAE;
+					};
+					DD5DC1592A3B61EF00E71696 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = DD8F59F82947F29D0093DBAE;
+					};
+					DD5DC1792A3CE15D00E71696 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = DD8F59F82947F29D0093DBAE;
+					};
 					DD8F59F82947F29D0093DBAE = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -333,16 +521,40 @@
 				DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				DD8F5A2D2947F4A60093DBAE /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
 			);
-			productRefGroup = DD8F59FA2947F29D0093DBAE /* Products */;
+			productRefGroup = DD8F59F02947F29D0093DBAE;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				DD8F59F82947F29D0093DBAE /* Ntosetta */,
+				DD5DC13A2A3B553400E71696 /* NtosettaUITests */,
+				DD5DC1592A3B61EF00E71696 /* NtosettaTests */,
+				DD5DC1792A3CE15D00E71696 /* NtosettaUITests2 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DD5DC1392A3B553400E71696 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD5DC1582A3B61EF00E71696 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD5DC1782A3CE15D00E71696 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD8F59F72947F29D0093DBAE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,6 +568,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DD5DC1372A3B553400E71696 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD5DC1722A3C763400E71696 /* ForgotPasswordService.swift in Sources */,
+				DD5DC1732A3C763400E71696 /* ForgotPasswordViewModel.swift in Sources */,
+				DD5DC1742A3C763400E71696 /* LoginCredentials.swift in Sources */,
+				DD5DC1752A3C763400E71696 /* LoginService.swift in Sources */,
+				DD5DC13E2A3B553400E71696 /* NtosettaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD5DC1562A3B61EF00E71696 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD5DC15D2A3B61EF00E71696 /* NtosettaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD5DC1762A3CE15D00E71696 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD5DC17D2A3CE15D00E71696 /* NtosettaUITests2.swift in Sources */,
+				DD5DC1862A3E3BA100E71696 /* MainMenuUITest.swift in Sources */,
+				DD5DC17F2A3CE15D00E71696 /* NtosettaUITests2LaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD8F59F52947F29D0093DBAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,7 +628,6 @@
 				DD8F5A512947F6EC0093DBAE /* CloseModifier.swift in Sources */,
 				DDE913FE298BD67E00940EA5 /* VoiceOverAll.swift in Sources */,
 				DD8F5A572947F74A0093DBAE /* LoginView.swift in Sources */,
-				DD3D4CFE29EB342300F78443 /* UserCred.xcdatamodeld in Sources */,
 				DD8F5A4F2947F6B20093DBAE /* SessionUserDetails.swift in Sources */,
 				DD16F602294BA81E00202476 /* VoiceOverArticles.swift in Sources */,
 				DDE91400298BD81F00940EA5 /* VoiceContent.swift in Sources */,
@@ -399,18 +640,136 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		DDFF70EF29520748002A9978 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DDFF70F029520748002A9978 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		DD5DC1422A3B553400E71696 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD8F59F82947F29D0093DBAE /* Ntosetta */;
+			targetProxy = DD5DC1412A3B553400E71696 /* PBXContainerItemProxy */;
 		};
-/* End PBXVariantGroup section */
+		DD5DC15F2A3B61EF00E71696 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD8F59F82947F29D0093DBAE /* Ntosetta */;
+			targetProxy = DD5DC15E2A3B61EF00E71696 /* PBXContainerItemProxy */;
+		};
+		DD5DC1812A3CE15D00E71696 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD8F59F82947F29D0093DBAE /* Ntosetta */;
+			targetProxy = DD5DC1802A3CE15D00E71696 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		DD5DC1442A3B553400E71696 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P877L6KY5H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Thomas.Pantos.NtosettaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ntosetta;
+			};
+			name = Debug;
+		};
+		DD5DC1452A3B553400E71696 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P877L6KY5H;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Thomas.Pantos.NtosettaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ntosetta;
+			};
+			name = Release;
+		};
+		DD5DC1612A3B61EF00E71696 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P877L6KY5H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Thomas.Pantos.NtosettaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ntosetta.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Ntosetta";
+			};
+			name = Debug;
+		};
+		DD5DC1622A3B61EF00E71696 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P877L6KY5H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Thomas.Pantos.NtosettaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ntosetta.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Ntosetta";
+			};
+			name = Release;
+		};
+		DD5DC1832A3CE15D00E71696 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P877L6KY5H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Thomas.Pantos.NtosettaUITests2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ntosetta;
+			};
+			name = Debug;
+		};
+		DD5DC1842A3CE15D00E71696 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P877L6KY5H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Thomas.Pantos.NtosettaUITests2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ntosetta;
+			};
+			name = Release;
+		};
 		DD8F5A052947F29E0093DBAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -447,6 +806,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_VERSION = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -507,6 +867,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -528,7 +889,6 @@
 		DD8F5A082947F29E0093DBAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -542,8 +902,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -563,7 +923,6 @@
 		DD8F5A092947F29E0093DBAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -577,8 +936,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -598,6 +957,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DD5DC1432A3B553400E71696 /* Build configuration list for PBXNativeTarget "NtosettaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD5DC1442A3B553400E71696 /* Debug */,
+				DD5DC1452A3B553400E71696 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD5DC1602A3B61EF00E71696 /* Build configuration list for PBXNativeTarget "NtosettaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD5DC1612A3B61EF00E71696 /* Debug */,
+				DD5DC1622A3B61EF00E71696 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD5DC1822A3CE15D00E71696 /* Build configuration list for PBXNativeTarget "NtosettaUITests2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD5DC1832A3CE15D00E71696 /* Debug */,
+				DD5DC1842A3CE15D00E71696 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DD8F59F42947F29D0093DBAE /* Build configuration list for PBXProject "Ntosetta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -638,6 +1024,71 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DD5DC1482A3B613B00E71696 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		DD5DC14A2A3B614600E71696 /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A2D2947F4A60093DBAE /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
+		DD5DC14C2A3B618F00E71696 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		DD5DC14E2A3B619400E71696 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		DD5DC1502A3B619800E71696 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		DD5DC1522A3B619F00E71696 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		DD5DC1542A3B61A800E71696 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+		DD5DC1632A3B622D00E71696 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		DD5DC1652A3B623200E71696 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		DD5DC1672A3B623500E71696 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		DD5DC1692A3B623900E71696 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		DD5DC16B2A3B624000E71696 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+		DD5DC16D2A3B624500E71696 /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A2D2947F4A60093DBAE /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
 		DD8F5A0E2947F34C0093DBAE /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -683,20 +1134,12 @@
 			package = DD8F5A2D2947F4A60093DBAE /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
 			productName = CachedAsyncImage;
 		};
-/* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		DD3D4CFC29EB342300F78443 /* UserCred.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DD3D4CFD29EB342300F78443 /* UserCred.xcdatamodel */,
-			);
-			currentVersion = DD3D4CFD29EB342300F78443 /* UserCred.xcdatamodel */;
-			path = UserCred.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+		DDDCB0102A3A12580018A789 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8F5A0D2947F34C0093DBAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
 		};
-/* End XCVersionGroup section */
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD8F59F12947F29D0093DBAE /* Project object */;
 }

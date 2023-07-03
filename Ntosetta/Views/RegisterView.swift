@@ -38,6 +38,7 @@ struct RegisterView: View {
                             TextField("Email", text: $viewModel.userDetails.email)
                                 .padding()
                                 .frame(width: 300, height: 50)
+                                .accessibility(identifier: "TextFieldRegister")
                                 .background(Color.black)
                                 .border(.red, width: CGFloat(0))
                                 .textInputAutocapitalization(.never)
@@ -51,6 +52,7 @@ struct RegisterView: View {
                                 .border(.red, width: CGFloat(0))
                                 .textInputAutocapitalization(.never)
                                 .cornerRadius(15)
+                                .accessibility(identifier: "PassReg")
                             
                             TextField("First", text: $viewModel.userDetails.firstName)
                                 .padding()
@@ -59,6 +61,7 @@ struct RegisterView: View {
                                 .border(.red, width: CGFloat(0))
                                 .textInputAutocapitalization(.never)
                                 .cornerRadius(15)
+                                .accessibility(identifier: "FirstName")
                             
                             TextField("Last", text: $viewModel.userDetails.lastName)
                                 .padding()
@@ -67,6 +70,8 @@ struct RegisterView: View {
                                 .border(.red, width: CGFloat(0))
                                 .textInputAutocapitalization(.never)
                                 .cornerRadius(15)
+                                .accessibility(identifier: "LastName")
+                                
                         }   else {
                             TextField("Email", text: $viewModel.userDetails.email)
                                 .padding()
@@ -100,6 +105,7 @@ struct RegisterView: View {
                         Button("Sign up") {
                             viewModel.register()
                         }
+                        .accessibility(identifier: "FinalRegister")
                         .foregroundColor(.white)
                         .frame(width: 300, height: 50)
                         .background(Color.customDarkGreen)
@@ -108,7 +114,6 @@ struct RegisterView: View {
                         
                         
                     }.navigationTitle("Register")
-                        .applyClose()
                         .alert(isPresented: $viewModel.hasError,
                                content: {
                             
@@ -127,7 +132,7 @@ struct RegisterView: View {
                 }
             }
             
-            //            .applyClose()
+                        .applyClose()
             
             
         }
