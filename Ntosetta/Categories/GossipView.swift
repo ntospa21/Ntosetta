@@ -11,7 +11,7 @@ import SwiftUI
 import CachedAsyncImage
 
 struct GossipView: View {
-    @ObservedObject private var viewModel = MyArticlesViewModel()
+    @ObservedObject  public var viewModel = MyArticlesViewModel()
 
     var body: some View {
         

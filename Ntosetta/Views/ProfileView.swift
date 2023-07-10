@@ -1,4 +1,4 @@
-//
+
 //  ProfileVieww.swift
 //  Ptuxiaki
 //
@@ -22,9 +22,11 @@ struct ProfileView: View {
     @State var retrieveUID = [String]()
     @State var retrievedImage: UIImage? // Replace `@State var retrievedImages = UIImage()` with this line
     @State private var isLikedByUser = false
-    @State private var selectedLikedArticle: String? = nil
-    @State private var likedArticles: [String] = []
+    @State private var likedArticles: [(String, String, String, String)] = []
     let databaseRef = Database.database().reference()
+    @State private var imageScale: CGFloat = 1.0
+    @State private var isBouncing = false
+    @State private var offset: CGFloat = 200.0
 
     
     var body: some View {
@@ -33,48 +35,85 @@ struct ProfileView: View {
             NavigationStack{
                 ScrollView{
                     Spacer()
-                    VStack(alignment: .center, spacing: 15){
-                        HStack{
-                            Text("\(sessionService.userDetails?.firstName ?? "N/A" )").foregroundColor(.red)
+                    VStack(alignment: .center, spacing: 15) {
+                        HStack {
+                            Text("\(sessionService.userDetails?.firstName ?? "N/A")")
+                                .foregroundColor(.red)
                                 .font(.title)
                                 .bold()
-                            Text("\(sessionService.userDetails?.lastName ?? "N/A" )").foregroundColor(.red)
+                            Text("\(sessionService.userDetails?.lastName ?? "N/A")")
+                                .foregroundColor(.red)
                                 .font(.title)
                                 .bold()
+                                .animation(Animation.easeInOut(duration: 10), value: offset)
+
                         }
                         
-                        if image != nil {
-                            Image(uiImage: image!)
-                                .resizable()
-                                .frame(width: 200, height: 200)
-                        }
-                        Button{
-                            showSheet = true
-                            
-                        } label: {
-                            Text("select a Photo")
-                        }
-                        
-                        
-                        
-                        
-                        
-                        if image != nil {
-                            Button{
-                                uploadPhoto()
-                            } label: {
-                                Text("Upload Photo")
-                            }
-                        }
-                        HStack{
-                            
-                            Image(uiImage: retrievedImages)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 128, height: 128)
-                                .cornerRadius(64)
-                            
-                        }
+//                        Group {
+//
+//                            HStack{
+//
+//                                Image(uiImage: retrievedImages)
+//                                    .resizable()
+//                                    .scaledToFill()
+//                                    .frame(width: 128, height: 128)
+//                                    .cornerRadius(64)
+//
+//                            }
+//                                                    if let image = image {
+//                                                        Image(uiImage: image)
+//                                                            .resizable()
+//                                                            .scaledToFill()
+//                                                            .frame(width: 200, height: 200)
+//                                                            .cornerRadius(100)
+//                                                            .shadow(radius: 10)
+//                                                            .scaleEffect(isBouncing ? 0.9 : 1.0)
+//                                                        Button{
+//                                                            uploadPhoto()
+//                                                        } label: {
+//                                                            Text("Upload Photo")
+//                                                        }
+//                                                    } else if let retrievedImage = retrievedImage {
+//                                                        Image(uiImage: retrievedImage)
+//                                                            .resizable()
+//                                                            .scaledToFill()
+//                                                            .frame(width: 200, height: 200)
+//                                                            .cornerRadius(100)
+//                                                            .shadow(radius: 10)
+//                                                            .scaleEffect(isBouncing ? 0.9 : 1.0)
+//                                                    } else {
+//                                                        Color.clear // Placeholder view when both images are nil
+//                                                    }
+//                                                }
+//                                                .id(UUID().uuidString) // Add unique ID to force view update
+//
+//                                                // ...
+//
+//                                                Button {
+//                                                    showSheet = true
+//                                                } label: {
+//                                                    Text("Select a Photo")
+//                                                        .foregroundColor(.white)
+//                                                        .padding()
+//                                                        .background(
+//                                                            RoundedRectangle(cornerRadius: 10)
+//                                                                .foregroundColor(.blue)
+//                                                        )
+//                                                }
+//                                                .padding()
+//
+//
+//
+//
+//
+////                        if image != nil {
+////                            Button{
+////                                uploadPhoto()
+////                            } label: {
+////                                Text("Upload Photo")
+////                            }
+////                        }
+                     
                         Spacer()
                         HStack{
                             Image(systemName: "envelope")
@@ -87,28 +126,47 @@ struct ProfileView: View {
                             .font(.title)
                             .fontWeight(.bold)
                             .padding(.top, 16)
-
                         LazyVStack(alignment: .leading, spacing: 8) {
-                            ForEach(likedArticles, id: \.self) { articleTitle in
-                                Text(articleTitle)
-                                    .font(.system(size: 16))
-                                    .foregroundColor(.black)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            ForEach(likedArticles, id: \.0) { article in
+                                let destinationView = MyNewsArticle(title: article.0, image: article.2, content: article.1, category: article.3)
+                                
+                                NavigationLink(destination: destinationView) {
+                                    VStack {
+                                        ZStack(alignment: .bottomLeading) {
+                                            CachedAsyncImage(url: URL(string: article.2), transaction: Transaction(animation: .easeInOut)) { phase in
+                                                if let image = phase.image {
+                                                    image
+                                                        .resizable()
+                                                        .aspectRatio(contentMode: .fit)
+                                                        .cornerRadius(8)
+                                                } else {
+                                                    // Placeholder image or loading indicator
+                                                    ProgressView()
+                                                }
+                                            }
+                                            
+                                            Text(article.0)
+                                                .font(.title2)
+                                                .fontWeight(.bold)
+                                                .italic()
+                                                .padding()
+                                                .foregroundColor(.white)
+                                                .background(
+                                                    LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom)
+                                                        .opacity(0.8)
+                                                )
+                                                .transition(.opacity)
+                                        }
+                                    }
                                     .padding(8)
-                                    .background(Color.blue.opacity(0.2))
+                                    .background(Color.gray.opacity(0.2))
                                     .cornerRadius(8)
+                                }
                             }
                         }
-                        .foregroundColor(.yellow)
-                        .padding(.horizontal, 16)
 
-                                          
-                        
-                      
                         
                         
-                        
-                      
                         
                         
                         
@@ -120,7 +178,7 @@ struct ProfileView: View {
                 }
                 .onAppear{
                     retrievePhoto()
-                    retrieveLikedArticles()
+                    observeLikedArticles()
                     
                 }
                 .onChange(of: image) { (retrievedImages) in
@@ -132,21 +190,36 @@ struct ProfileView: View {
             // Fallback on earlier versions
         }
     }
-   
-    func retrieveLikedArticles() {
-            guard let userID = Auth.auth().currentUser?.uid else {
-                print("User is not logged in")
-                return
-            }
-            
-            databaseRef.child("users").child(userID).child("liked_articles").observe(.value) { snapshot in
-                if let likedArticlesDict = snapshot.value as? [String: Any] {
-                    self.likedArticles = Array(likedArticlesDict.keys)
-                } else {
-                    self.likedArticles = []
+    func observeLikedArticles() {
+        guard let userID = Auth.auth().currentUser?.uid else {
+            print("User is not logged in")
+            return
+        }
+        
+        databaseRef.child("users").child(userID).child("liked_articles").observe(.value) { snapshot in
+            if let likedArticlesDict = snapshot.value as? [String: Any] {
+                let articles: [(String, String, String, String)] = likedArticlesDict.compactMap { articleID, articleData in
+                    guard let articleDataDict = articleData as? [String: Any],
+                          let title = articleDataDict["title"] as? String,
+                          let content = articleDataDict["content"] as? String,
+                          let image = articleDataDict["image"] as? String,
+                          let category = articleDataDict["category"] as? String else {
+                        return nil
+                    }
+                    return (title, content, image, category)
                 }
+                self.likedArticles = articles.map { ($0.0, $0.1, $0.2, $0.3) }
+            } else {
+                self.likedArticles = []
             }
         }
+    }
+
+    
+    
+    
+    
+    
     
     func uploadPhoto() {
         // Make sure that the selected image property isn't nil
@@ -167,14 +240,11 @@ struct ProfileView: View {
         let fileRef = storageRef.child(path)
         
         // Upload data to Firebase Storage
-        let uploadTask = fileRef.putData(imageData, metadata: nil) { metadata, error in
+        let _ = fileRef.putData(imageData, metadata: nil) { metadata, error in
             if let error = error {
                 // Handle the error
                 print("Error uploading photo to Firebase Storage: \(error.localizedDescription)")
             } else {
-                // Update the profile image locally
-                retrievedImage = image
-                
                 // Update the profile image on Firebase Firestore
                 if let uid = Auth.auth().currentUser?.uid {
                     let db = Firestore.firestore()
@@ -184,6 +254,11 @@ struct ProfileView: View {
                             print("Error updating profile image on Firestore: \(error.localizedDescription)")
                         } else {
                             print("Profile image updated successfully")
+                            
+                            // Update the image on the UI
+                            DispatchQueue.main.async {
+                                self.image = image
+                            }
                         }
                     }
                 }
@@ -192,66 +267,36 @@ struct ProfileView: View {
     }
 
 
+
+    
+        func retrievePhoto(){
+            let db = Firestore.firestore()
+            let uid = Auth.auth().currentUser?.uid
     
     
-//    func uploadPhoto(){
-//        // make sure that the selected image property isnt nil
-//        guard image != nil else {
-//            return
-//        }
-//        // create storage reference
-//        let storageRef = Storage.storage().reference()
-//        // turn image into data
-//        let imageData = image!.jpegData(compressionQuality: 0.8)
-//        guard imageData != nil else {
-//            return
-//        }
-//        // specify the file path and name
-//        let path = "images/\(UUID().uuidString).jpg"
-//        let fileRef = storageRef.child(path)
-//        // upload thata data
-//
-//        let uploadTask = fileRef.putData(imageData!,metadata: nil) { metadata, error in
-//            // take the uid
-//            let uid = Auth.auth().currentUser?.uid
-//
-//            //check for error
-//            if error == nil && metadata != nil {
-//                //save reference
-//                let db = Firestore.firestore()
-//                db.collection("images").document().setData(["url": path, "uid": uid!])
-//            }
-//        }
-//    }
+            db.collection("images").whereField("uid", isEqualTo: uid!).limit(to: 1).getDocuments{ snapshot, error in
+                if error == nil && snapshot != nil {
+    
+                    var paths = [String]()
+    
+                    for doc in snapshot!.documents {
+                        paths.append(doc["url"] as! String)
+    
+                        for path in paths {
+                            let storageRef = Storage.storage().reference()
+                            let fileRef = storageRef.child(path)
+    
+                            fileRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+                                if error == nil && data != nil {
+                                    // create a ui Image
+    
+                                    if let image = UIImage(data: data!){
+                                        DispatchQueue.main.async {
+    
+                                            retrievedImages = image
     
     
-    func retrievePhoto(){
-        let db = Firestore.firestore()
-        let uid = Auth.auth().currentUser?.uid
-        
-        
-        db.collection("images").whereField("uid", isEqualTo: uid!).limit(to: 1).getDocuments{ snapshot, error in
-            if error == nil && snapshot != nil {
-                
-                var paths = [String]()
-                
-                for doc in snapshot!.documents {
-                    paths.append(doc["url"] as! String)
-                    
-                    for path in paths {
-                        let storageRef = Storage.storage().reference()
-                        let fileRef = storageRef.child(path)
-                        
-                        fileRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
-                            if error == nil && data != nil {
-                                // create a ui Image
-                                
-                                if let image = UIImage(data: data!){
-                                    DispatchQueue.main.async {
-                                        
-                                        retrievedImages = image
-                                        
-                                        
+                                        }
                                     }
                                 }
                             }
@@ -260,60 +305,11 @@ struct ProfileView: View {
                 }
             }
         }
-    }
     
-    func fetchLikedArticleTitles() {
-            // Assuming you have a user ID to associate the liked articles with
-            guard let userID = Auth.auth().currentUser?.uid else {
-                print("User is not logged in")
-                return
-            }
-
-            databaseRef.child("users").child(userID).child("liked_articles").observeSingleEvent(of: .value) { snapshot in
-                if let likedArticlesDict = snapshot.value as? [String: Any] {
-                    let likedArticleIDs = Array(likedArticlesDict.keys)
-                    var fetchedLikedArticles: [String] = []
-
-                    for articleID in likedArticleIDs {
-                        // Assuming you have a "articles" node in your Firebase database
-                        databaseRef.child("articles").child(articleID).child("title").observeSingleEvent(of: .value) { snapshot in
-                            if let articleTitle = snapshot.value as? String {
-                                fetchedLikedArticles.append(articleTitle)
-
-                                // Update the likedArticles array when all titles are fetched
-                                if fetchedLikedArticles.count == likedArticleIDs.count {
-                                    likedArticles = fetchedLikedArticles
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-    func checkIfLikedByUser() {
-            // Assuming you have a user ID to associate the liked articles with
-            guard let userID = Auth.auth().currentUser?.uid else {
-                print("User is not logged in")
-                return
-            }
-            
-            // Observe changes in the liked articles
-            databaseRef.child("users").child(userID).child("liked_articles").observe(.value) { snapshot in
-                if let likedArticlesDict = snapshot.value as? [String: Any] {
-                    self.likedArticles = Array(likedArticlesDict.keys)
-                    
-                    // Update the selectedLikedArticle if it is not in the updated list
-                    if let selectedLikedArticle = self.selectedLikedArticle,
-                       !self.likedArticles.contains(selectedLikedArticle) {
-                        self.selectedLikedArticle = nil
-                    }
-                } else {
-                    self.likedArticles = []
-                    self.selectedLikedArticle = nil
-                }
-            }
-        }
+    
+   
+    //
+    
 }
 
 
@@ -322,5 +318,4 @@ struct ProfileView_Previews: PreviewProvider {
         ProfileView(sessionService: SessionServiceImpl()).environmentObject(SessionServiceImpl())
     }
 }
-
 

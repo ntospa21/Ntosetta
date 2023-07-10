@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD0498282A5422EE002B5F23 /* CarouselModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0498272A5422EE002B5F23 /* CarouselModel.swift */; };
 		DD16F602294BA81E00202476 /* VoiceOverArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16F601294BA81E00202476 /* VoiceOverArticles.swift */; };
 		DD5DC13E2A3B553400E71696 /* NtosettaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5DC13D2A3B553400E71696 /* NtosettaUITests.swift */; };
 		DD5DC1492A3B613B00E71696 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = DD5DC1482A3B613B00E71696 /* FirebaseAppCheck */; };
@@ -128,6 +129,7 @@
 		DD0498212A49CBAD002B5F23 /* NtosettaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NtosettaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0498222A49CBAD002B5F23 /* NtosettaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NtosettaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0498232A49CBAD002B5F23 /* NtosettaUITests2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NtosettaUITests2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD0498272A5422EE002B5F23 /* CarouselModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselModel.swift; sourceTree = "<group>"; };
 		DD16F601294BA81E00202476 /* VoiceOverArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverArticles.swift; sourceTree = "<group>"; };
 		DD5DC13D2A3B553400E71696 /* NtosettaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NtosettaUITests.swift; sourceTree = "<group>"; };
 		DD5DC15C2A3B61EF00E71696 /* NtosettaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NtosettaTests.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				DD8F5A1E2947F3850093DBAE /* MyArticles.swift */,
 				DDE913FD298BD67E00940EA5 /* VoiceOverAll.swift */,
 				DDE913FF298BD81F00940EA5 /* VoiceContent.swift */,
+				DD0498272A5422EE002B5F23 /* CarouselModel.swift */,
 			);
 			path = ApiCaller;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				DD8F5A472947F6580093DBAE /* RegistrationDetails.swift in Sources */,
 				DD8F5A4D2947F6A50093DBAE /* SessionService.swift in Sources */,
 				DD8F5A3D2947F5FE0093DBAE /* ForgotPasswordService.swift in Sources */,
+				DD0498282A5422EE002B5F23 /* CarouselModel.swift in Sources */,
 				DD8F5A1F2947F3850093DBAE /* MyArticles.swift in Sources */,
 				DD8F5A282947F4370093DBAE /* SportsView.swift in Sources */,
 				DD8F5A382947F5C40093DBAE /* TabView.swift in Sources */,
